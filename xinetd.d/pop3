@@ -1,0 +1,12 @@
+service pop3
+{
+    disable     = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    server      = /opt/bin/fakepop3.sh 
+    user        = nobody
+    cps		= 3 300
+    per_source	= 10
+    instances	= 100
+}
