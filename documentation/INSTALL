@@ -1,0 +1,23 @@
+INSTALL
+
+The dummy pop3 server is a bash script executed by an interet
+super server, e.g. xinetd. An xinetd config file is provided
+with the code.
+
+It requires (only) the following packages/binaries
+- bash
+- xinetd
+- logger (logs requests to the mail log, part of bsdutils)
+
+This should do the installation just fine in most distries:
+
+cp dummypop3.sh /opt/bin/
+chmod 755 /opt/bin/dummypop3.sh
+cp xinetd.d/pop3 /etc/xinted.d/
+/etc/init.d/xinetd restart
+
+Now port 110 should listen to POP3 and and logins are logged
+to the mail.log facility of syslog.
+
+The script is invoced as "nobody", so make sure the nobody
+user can execute the script in its location!

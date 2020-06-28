@@ -1,0 +1,13 @@
+README
+
+The Dummy POP3 script is a handy little script, if you need a POP3 server quick for
+testing. It is fully STD53 (https://tools.ietf.org/html/std53) compliant!
+It can be used for:
+
+- testing POP3 clients
+- testing AV email solutions
+- honeypot for POP3 (records all user/pass combinations tried)
+
+It will accept any combination of user and pass and will always deliver one email.
+If part of the username is "eicar", it will deliver an email with an attached file
+containing the EICAR virus signature.
